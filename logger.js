@@ -1,8 +1,19 @@
+const EventEmitter = require('events');
+const log_emitter = new EventEmitter();
 
-function log(message) {
-    console.log(`Logging: ${message}`)
-}
+log_emitter.on('logging', (message) => {
+    console.log(`Logging: ${message}`);
+})
+module.exports.log_emitter = log_emitter;
 
-// console.log(module)
 
-module.exports.log = log;
+
+
+
+// function log(message) {
+//     console.log(`Logging: ${message}`)
+// }
+
+// // console.log(module)
+
+// module.exports.log = log;
